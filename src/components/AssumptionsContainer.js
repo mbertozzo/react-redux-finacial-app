@@ -1,26 +1,37 @@
 import { connect } from 'react-redux';
-import { updateIncome } from './../actions';
-import Assumptions from './Assumptions';
+import { updateIncomeSources, updateIncome, updateSavings } from '../actions'
+import Assumptions from './Assumptions'
 
 const mapStateToProps = (state) => {
-  return {
-    assumptions: state.assumptions,
-  }
+	return {
+		assumptions: state.assumptions,
+	}
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    handleUpdateIncome: (income) => {
-       dispatch(updateIncome(
-         Number((income).replace(',',''))
-       ))
-    }
-  }
+	return {
+
+		handleUpdateIncomeSources: (sources) => {
+			dispatch(updateIncomeSources(Number(sources)))
+		},
+
+		handleUpdateIncome: (income) => {
+			dispatch(updateIncome(
+				Number((income).replace(",",""))
+			))
+		},
+
+		handleUpdateSavings: (savings) => {
+			dispatch(updateSavings(
+				Number((savings).replace(",", ""))
+			))
+		}
+	}
 }
 
-const AssumptionContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+const AssumptionsContainer = connect(
+	mapStateToProps,
+	mapDispatchToProps
 )(Assumptions)
 
-export default AssumptionContainer;
+export default AssumptionsContainer
