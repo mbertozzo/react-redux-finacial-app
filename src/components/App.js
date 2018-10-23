@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import { Grid, Row } from 'react-bootstrap';
 
-const App = () => {
+import MenuBar from './MenuBar';
+
+const App = ({ children }) => {
   return (
-      <p> Hello World! </p>
+    <Grid id="App">
+      <Row id="MenuBar"><MenuBar /></Row>
+      <Row>{children}</Row>
+    </Grid>
   );
 }
 export default App
