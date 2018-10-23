@@ -1,10 +1,8 @@
-const UPDATE_INCOME = 'UPDATE_INCOME';
+export const UPDATE_INCOME = 'UPDATE_INCOME';
 
-const updateIncome = (income) => {
+export const updateIncome = (income) => {
   return {
     type: UPDATE_INCOME,
-    income  //ES6 - same as income: income
+    income: income
   }
 }
-
-export default { UPDATE_INCOME, updateIncome }

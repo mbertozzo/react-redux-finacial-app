@@ -3,7 +3,7 @@ import {Link} from 'react-router'
 import { FormGroup, Row, ControlLabel, FormControl, Button, InputGroup } from 'react-bootstrap';
 import {formatDollarValues} from '../helpers'
 
-const Assumptions = () => {
+const Assumptions = ({assumptions, handleUpdateIncome}) => {
  return (
   <div id="Assumptions">
    <FormGroup id="assumptions-form">
@@ -33,6 +33,10 @@ const Assumptions = () => {
                onChange={(e)=>
                   e.target.value = formatDollarValues((e.target.value).replace(",",""))
                }
+               onBlur={(e) => {
+                e.preventDefault()
+                handleUpdateIncome(e.target.value)
+              }}
              />
            </div>
          </Row>

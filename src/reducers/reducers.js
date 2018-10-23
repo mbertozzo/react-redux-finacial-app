@@ -1,4 +1,4 @@
-import UPDATE_INCOME from './../actions'
+import { UPDATE_INCOME } from './../actions'
 
 const initialAssumptionsState = {
   income: 0
